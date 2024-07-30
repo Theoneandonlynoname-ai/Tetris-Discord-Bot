@@ -8,6 +8,13 @@ import discord
 from discord.ext import commands
 import random
 import asyncio
+from dotenv import load_dotenv
+
+load_dotenv()
+DISCORD_TOKEN = os.getenv('DISCORD_TOKEN')
+
+if TOKEN is None:
+    raise ValueError("Please set the DISCORD_TOKEN env in your .env file.")
 
 board = []
 num_of_rows = 18
@@ -454,4 +461,4 @@ async def on_reaction_add(reaction, user):
             await message.edit(content="")
 
 
-client.run('Your token here')
+client.run(DISCORD_TOKEN)
